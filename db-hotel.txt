@@ -10,4 +10,6 @@ WHERE `date_of_birth` > "1988";
 FROM `ospiti` 
 WHERE `date_of_birth` < "1998";
 
-4)
+4)SELECT * 
+FROM `ospiti` 
+WHERE `name`  LIKE 'D%';
