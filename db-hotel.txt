@@ -1,3 +1,5 @@
-1)SELECT `name`, `lastname` 
+1)SELECT *
 FROM `ospiti` 
 WHERE `document_type` = "CI";
+
+2)
