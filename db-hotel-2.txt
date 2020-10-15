@@ -1,0 +1,28 @@
+1)SELECT COUNT(`id`), 
+YEAR(`date_of_birth`) AS `data`
+FROM `ospiti` 
+GROUP BY YEAR(`date_of_birth`)
+
+2)SELECT SUM(`price`) AS `totale`, `status`
+FROM `pagamenti` 
+GROUP BY `status`;
+
+3)SELECT COUNT(`id`) AS `totale_prenotazioni`, `stanza_id`
+FROM `prenotazioni`
+GROUP BY (`stanza_id`);
+
+4) SELECT COUNT(`id`)
+HOUR(`created_at`)
+FROM `prenotazioni`
+GROUP BY (HOUR(`created_at`))
+
+5) SELECT COUNT(`id`) AS `totale_prenotazioni`, `ospite_id`
+FROM `prenotazioni_has_ospiti`
+GROUP BY (`ospite_id`)
+ORDER BY `totale_prenotazioni` DESC
+
+6) SELECT COUNT(prenotazioni_has_ospiti.ospite_id), ospiti.name
+FROM `prenotazioni_has_ospiti`
+INNER JOIN `ospiti`
+ON ospiti.id = prenotazioni_has_ospiti.ospite_id
+GROUP BY (prenotazioni_has_ospiti.ospite_id)
